@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Semafaro from './components/Semafaro'
+import styles from '../styles/semaro.module.css'
 
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <main >
+        <main className={styles.main}>
 
           <Semafaro />
         </main>
