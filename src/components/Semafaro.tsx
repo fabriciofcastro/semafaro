@@ -4,30 +4,48 @@ import imgVermelho from '../../public/image/vermelho.png'
 import imgVerde from '../../public/image/verde.png'
 import imgAmarelo from '../../public/image/amarelo.png'
 import { useState } from "react";
+import { SContainer, BoxButton, BoxSemafaro } from "./styleSemafaro";
+import Image from "../../node_modules/next/image";
+
 
 export default function Semafaro() {
 
-    const [status, setStatus] = useState(imgDesligado)
+  const [statusImg, setStatusImg] = useState(imgDesligado)
 
 
-    function validarStatus(e) {
-            corSemafaro[e.target.id]()
-    }
+  const corVermelho = () => {
+
+    setStatusImg(imgVermelho)
+  }
+  const corVerde = () => {
+
+    setStatusImg(imgVerde)
+  }
+  const corAmarelo = () => {
+
+    setStatusImg(imgAmarelo)
+  }
+  const desligar = () => {
+
+    setStatusImg(imgDesligado)
+  }
+
+  const automatico = () => {
+    setInterval(() => {
+// implementação em desenvolvimento
+    },5000)
+  }
 
 
+  return (
+    <SContainer >
+      <BoxSemafaro>
+        <Image src={ statusImg } alt="semáfaro" width={100} height={100}/>
+      </BoxSemafaro>
 
-        const corSemafaro = {
+      <Buttons corVermelho={ corVermelho } corVerde={ corVerde } corAmarelo={ corAmarelo } desligar={ desligar } automatico={automatico}/>
 
-            'Vermelho': () => <Image src={setStatus(imgVermelho)} alt="" />,
-            'Amarelo':  () => <Image src={setStatus(imgAmarelo)} alt="" />,
-            'Verde':    () => <Image src={setStatus(imgVerde)} alt="" />,
-            'Desligar': () => <Image src={setStatus(imgDesligado)} alt="" />
-        }
 
-    return (
-        <div className={styles.Buttons}>
-             <Image src={status} alt="" />
-             <Buttons verifica={validarStatus} />
-        </div>
-    )
+    </SContainer>
+  )
 }

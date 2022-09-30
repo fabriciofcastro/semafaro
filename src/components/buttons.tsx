@@ -1,13 +1,15 @@
-import styles  from '../../styles/semaro.module.css'
-export default function Buttons(props) {
+import { BoxButton, SButton } from "./styleSemafaro";
 
-    return (
+export default function Buttons({ corVermelho, corVerde, corAmarelo, desligar, automatico }) {
 
-       <div className={styles.buttons}>
-         <button id="Vermelho"   onClick={ props.verifica } >Vermeho</button>
-         <button id="Amarelo"    onClick={ props.verifica } >Amarelo</button>
-         <button id="Verde"      onClick={ props.verifica } >Verde</button>
-         <button id="Desligar"   onClick={ props.verifica } >Desligar</button>
-       </div>
-    )
+  return (
+
+    <BoxButton >
+      <SButton onClick={ corVermelho } value="Vermeho" type="button"  corButton="vermelho" />
+      <SButton onClick={ corAmarelo } value="Amarelo" type="button" corButton="amarelo"/>
+      <SButton onClick={ corVerde } value="Verde" type="button" corButton="verde" />
+      <SButton onClick={ desligar } value="Desligar" type="button" corButton="cinza" />
+      <SButton onClick={ automatico } value="automatico" type="button" corButton="automatico" />
+    </BoxButton>
+  )
 }
