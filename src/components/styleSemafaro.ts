@@ -16,16 +16,20 @@ export const SContainer = styled.div`
 
 export const BoxSemafaro = styled.div`
   width: 100%;
-  height: 25rem;
+  height: 40rem;
   display: flex;
+  align-items: center;
   justify-content: center;
+`
+export const ImgSemafaro = styled.img`
+  width: 7%;
 `
 
 /**
  *     **************    S T Y L E     B U T T O N    *************
  */
 export const BoxButton = styled.div`
-  width: 20rem;
+  width: 4rem;
   height: 40rem;
   display: flex;
   flex-direction: column;
